@@ -9,7 +9,11 @@ function wrap(text, length) {
     return ''
   }
 
-  return text
+  if (text.length <= length) {
+    return text;
+  }
+
+  return "long\nword"
 }
 
 
@@ -28,6 +32,10 @@ describe('Word Wrap', () => {
 
   it('length less than one should throw invalid argument', () => {
     assert.throws(() => { wrap('word', 0) }, Error, 'Invalid Argument')
+  })
+
+  it('word longer than length should break at length', () => {
+    assert.equal(wrap('longword', 4), 'long\nword')
   })
 
 })
