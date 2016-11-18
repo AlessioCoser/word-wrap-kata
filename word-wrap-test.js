@@ -13,7 +13,7 @@ function wrap(text, length) {
     return text;
   }
 
-  return "long\nword"
+  return text.substring(0, length) + "\n" + text.substring(length);
 }
 
 
@@ -36,6 +36,7 @@ describe('Word Wrap', () => {
 
   it('word longer than length should break at length', () => {
     assert.equal(wrap('longword', 4), 'long\nword')
+    assert.equal(wrap('longerword', 6), 'longer\nword')
   })
 
 })
