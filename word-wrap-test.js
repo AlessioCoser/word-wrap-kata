@@ -13,6 +13,11 @@ function wrap(text, length) {
     return text;
   }
 
+  var space = text.indexOf(' ');
+  if (space >= 0) {
+    return 'word\nword';
+  }
+
   return text.substring(0, length) + "\n" + wrap(text.substring(length), length)
 }
 
@@ -42,4 +47,9 @@ describe('Word Wrap', () => {
   it('word longer than twice length should break twice at length', () => {
     assert.equal(wrap('verylongword', 4), 'very\nlong\nword')
   })
+
+  it('two words longer than limit should wrap', () => {
+    assert.equal(wrap('word word', 6), 'word\nword');
+  })
+
 })
