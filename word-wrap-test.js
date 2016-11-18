@@ -13,7 +13,7 @@ function wrap(text, length) {
     return text;
   }
 
-  return text.substring(0, length) + "\n" + text.substring(length);
+  return text.substring(0, length) + "\n" + wrap(text.substring(length), length)
 }
 
 
@@ -39,4 +39,7 @@ describe('Word Wrap', () => {
     assert.equal(wrap('longerword', 6), 'longer\nword')
   })
 
+  it('word longer than twice length should break twice at length', () => {
+    assert.equal(wrap('verylongword', 4), 'very\nlong\nword')
+  })
 })
