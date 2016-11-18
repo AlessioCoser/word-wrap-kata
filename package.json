@@ -1,0 +1,14 @@
+{
+  "name": "word-wrap-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "word-wrap.js",
+  "scripts": {
+    "test": "mocha *-test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}
