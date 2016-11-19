@@ -32,4 +32,8 @@ describe('Word Wrap', () => {
     assert.equal(wrap('wrap here', 6), 'wrap\nhere');
   })
 
+  it('three words each longer than limit should wrap', () => {
+    assert.equal(wrap('word word word', 6), 'word\nword\nword');
+  })
+
 })

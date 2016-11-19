@@ -14,7 +14,7 @@ module.exports = function wrap(text, length) {
   var space = text.indexOf(' ')
 
   if (space >= 0) {
-    return text.substring(0, space) + "\n" + text.substring(space + 1)
+    return text.substring(0, space) + "\n" + wrap(text.substring(space + 1), space + 1)
   }
 
   return text.substring(0, length) + "\n" + wrap(text.substring(length), length)
