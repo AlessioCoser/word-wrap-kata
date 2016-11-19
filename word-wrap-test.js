@@ -15,7 +15,9 @@ describe('Word Wrap', () => {
   })
 
   it('length less than one should throw invalid argument', () => {
-    assert.throws(() => { wrap('word', 0) }, Error, 'Invalid Argument')
+    assert.throws(() => {
+      wrap('word', 0)
+    }, Error, 'Invalid Argument')
   })
 
   it('word longer than length should break at length', () => {
@@ -28,20 +30,19 @@ describe('Word Wrap', () => {
   })
 
   it('two words longer than limit should wrap', () => {
-    assert.equal(wrap('word word', 6), 'word\nword');
-    assert.equal(wrap('wrap here', 6), 'wrap\nhere');
+    assert.equal(wrap('word word', 6), 'word\nword')
+    assert.equal(wrap('wrap here', 6), 'wrap\nhere')
   })
 
   it('three words each longer than limit should wrap', () => {
-    assert.equal(wrap('word word word', 6), 'word\nword\nword');
+    assert.equal(wrap('word word word', 6), 'word\nword\nword')
   })
 
   it('three words just over the limit should wrap', () => {
-    assert.equal(wrap('word word word', 11), 'word word\nword');
+    assert.equal(wrap('word word word', 11), 'word word\nword')
   })
 
   it('two words the first ending at the limit', () => {
-    assert.equal(wrap('word word', 4), 'word\nword');
+    assert.equal(wrap('word word', 4), 'word\nword')
   })
-
 })

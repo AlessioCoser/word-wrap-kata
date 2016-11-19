@@ -12,7 +12,7 @@ class WordWrap {
       throw new Error('Invalid Argument')
     }
 
-    if (text == null) {
+    if (text === null) {
       return ''
     }
 
@@ -30,9 +30,9 @@ class WordWrap {
   }
 
   breakBetween(text, start, end) {
-    return text.substring(0, start)
-    + '\n'
-    + WordWrap.wrap(text.substring(end), this.length)
+    return text.substring(0, start) +
+    '\n' +
+    WordWrap.wrap(text.substring(end), this.length)
   }
 }
 
