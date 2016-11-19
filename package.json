@@ -6,8 +6,16 @@
   "scripts": {
     "test": "mocha *-test.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlessioCoser/word-wrap-kata.git"
+  },
+  "author": "Alessio Coser",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlessioCoser/word-wrap-kata/issues"
+  },
+  "homepage": "https://github.com/AlessioCoser/word-wrap-kata#readme",
   "devDependencies": {
     "mocha": "^3.1.2"
   }
