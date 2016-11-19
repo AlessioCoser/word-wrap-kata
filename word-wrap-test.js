@@ -1,5 +1,5 @@
 var assert = require('assert')
-var wrap = require('./word-wrap')
+var wrap = require('./word-wrap').wrap
 
 describe('Word Wrap', () => {
   it('wrap null returns empty string', () => {

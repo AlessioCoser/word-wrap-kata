@@ -36,4 +36,4 @@ class WordWrap {
   }
 }
 
-module.exports = WordWrap.wrap
+module.exports = WordWrap
