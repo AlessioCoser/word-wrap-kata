@@ -40,4 +40,8 @@ describe('Word Wrap', () => {
     assert.equal(wrap('word word word', 11), 'word word\nword');
   })
 
+  it('two words the first ending at the limit', () => {
+    assert.equal(wrap('word word', 4), 'word\nword');
+  })
+
 })

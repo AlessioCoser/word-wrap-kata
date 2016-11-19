@@ -9,7 +9,7 @@ class WordWrap {
 
   wrap(text) {
     if (this.length < 1) {
-      throw new Error('Invalid Argument');
+      throw new Error('Invalid Argument')
     }
 
     if (text == null) {
@@ -17,13 +17,13 @@ class WordWrap {
     }
 
     if (text.length <= this.length) {
-      return text;
+      return text
     }
 
-    var space = text.substring(0, this.length).lastIndexOf(" ");
+    var space = text.substring(0, this.length + 1).lastIndexOf(' ')
 
     if (space >= 0) {
-      return this.breakBetween(text, space, space+1)
+      return this.breakBetween(text, space, space + 1)
     }
 
     return this.breakBetween(text, this.length, this.length)
@@ -31,10 +31,9 @@ class WordWrap {
 
   breakBetween(text, start, end) {
     return text.substring(0, start)
-    + "\n"
-    + WordWrap.wrap(text.substring(end), this.length);
+    + '\n'
+    + WordWrap.wrap(text.substring(end), this.length)
   }
 }
-
 
 module.exports = WordWrap.wrap
