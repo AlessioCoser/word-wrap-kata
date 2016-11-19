@@ -20,7 +20,7 @@ class WordWrap {
       return text;
     }
 
-    var space = text.indexOf(' ')
+    var space = text.substring(0, this.length).lastIndexOf(" ");
 
     if (space >= 0) {
       return this.breakBetween(text, space, space+1)
